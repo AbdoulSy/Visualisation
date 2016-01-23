@@ -1,0 +1,46 @@
+  <h3 class="m-t-none m-b">{{content.details['meta:displayName']['@value']}}</h3>
+  <p class="m-b">
+    <a ng-click="openCommentsSection()" class="btn btn-rounded btn-sm btn-twitter" tooltip="Leave a comment"><i class="fa fa-comment-o m-r-xs"></i> Comments</a>
+    <a ng-click="openMailTo()" class="btn btn-rounded btn-sm btn-twitter" tooltip="Share this link" tooltip-placement="bottom"><i class="fa fa-envelope-o m-r-xs"></i> Share</a>
+  </p>
+  <div class="m-b-lg">
+    <p class="m-b-xs"><strong>Class</strong></p>
+    <p class="m-b-xs">
+      {{content.elementClass['meta:displayName']['@value'] || 'No Class Defined'}}
+    </p>
+  </div>
+  <div class="m-b-lg">
+    <p class="m-b-xs"><strong>Preferred Label:</strong></p>
+    <p class="m-b-xs disabled text-muted" ng-hide="content.panelData['skosxl:prefLabel'].length > 0 ">
+      No Preferred Label Specified
+    </p>
+    <p class="m-b-xs" ng-show="content.panelData['skosxl:prefLabel'].length > 0" ng-repeat="labelValue in content.panelData['skosxl:prefLabel']">
+      {{labelValue['skosxl:literalForm'][0]['@value']}} <span class="badge badge-hollow font-normal">{{labelValue['skosxl:literalForm'][0]['@language']}}</span>
+    </p>
+  </div>
+
+  <div class="m-b-lg">
+    <p class="m-b-xs"><strong>Alternative Label:</strong></p>
+    <p class="m-b-xs disabled text-muted" ng-hide="content.panelData['skosxl:altLabel'].length > 0 ">
+      No Alternative Label Specified
+    </p>
+    <p class="m-b-xs" ng-show="content.panelData['skosxl:altLabel'].length > 0" ng-repeat="labelValue in content.panelData['skosxl:altLabel']">
+      {{labelValue['skosxl:literalForm'][0]['@value']}} <span class="badge badge-hollow font-normal">{{labelValue['skosxl:literalForm'][0]['@language']}}</span>
+    </p>
+  </div>
+  <div class="m-b-lg">
+    <p class="m-b-xs"><strong>Metadata</strong></p>
+    <p class="m-b-xs text-muted" ng-show="manager.list.length === 0 ">
+      No Metadata Specified
+    </p>
+    <div
+      class="metadata-element m-b"
+      ng-show="manager.list.length > 0 "
+      ng-repeat="metadataRow in manager.list">
+      <p class="m-b-xs font-bold">{{manager.getValue(metadataRow.property)}}</p>
+      <div>
+        <span ng-bind-html="metadataRow.value['@value']"></span>
+        <span class="badge badge-hollow font-normal">{{metadataRow.value['@language']}}</span>
+      </div>
+    </div>
+  </div>

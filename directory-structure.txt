@@ -1,0 +1,76 @@
+visualizer/
+├── config
+│   └── settings.js
+├── dev
+│   ├── console.js
+│   └── rulers.js
+├── directives
+│   ├── visualizer-aside.js
+│   └── visualizer-graph.js
+├── errors
+│   └── errors.js
+├── externals
+│   ├── d3-service.js
+│   ├── textfit-service.js
+│   ├── underscore-service.js
+│   └── uri-service.js
+├── functions
+│   └── functions.js
+├── _future
+│   ├── circle-layout.js
+│   ├── math.js
+│   ├── object.js
+│   ├── predicate.js
+│   ├── subject.js
+│   ├── triple.js
+│   └── zoom-controls.js
+├── graph
+│   ├── layout-helpers.js
+│   ├── layout.js
+│   ├── metadata-panel.js
+│   ├── paginator-helpers.js
+│   ├── paginator.js
+│   ├── svg
+│   │   ├── circle
+│   │   │   └── circle-directive.js
+│   │   ├── g
+│   │   │   ├── g-directive.js
+│   │   │   └── g-directive.js~
+│   │   ├── link
+│   │   │   └── link-directive.js
+│   │   ├── node
+│   │   │   └── node-service.js
+│   │   ├── rect
+│   │   │   └── rect-directive.js
+│   │   ├── svg-directive.js
+│   │   └── text
+│   │       └── text-directive.js
+│   ├── templating.js
+│   ├── text.js
+│   ├── utils.js
+│   └── vis.js
+├── language
+│   └── en.js
+├── modules
+│   ├── config-module.js
+│   ├── data-module.js
+│   ├── dev-module.js
+│   ├── directives-module.js
+│   ├── errors-module.js
+│   ├── externals-module.js
+│   ├── functions-module.js
+│   ├── _future-module.js
+│   ├── graph-module.js
+│   ├── language-module.js
+│   ├── null-module.js
+│   ├── server-module.js
+│   ├── svg-module.js
+│   └── test-module.js
+├── semaphore
+│   └── data-manager.js
+├── ses
+│   ├── data-manager.js
+│   └── processor.js
+└── templates
+    ├── visualizer-aside-panel.html
+    └── visualizer-graph.html

@@ -1,0 +1,26 @@
+{
+  "name": "smartlogic-visualisation",
+  "authors": [
+    "Abdoul Sy <abdoul.sy@smartlogic.com>"
+  ],
+  "description": "The Ontology Visualizer Component For Semaphore and Other Smartlogic Projects",
+  "main": "index.js",
+  "moduleType": [],
+  "keywords": [
+    "Ontology",
+    "Visualizer",
+    "Visualisation",
+    "Visualizer",
+    "OV"
+  ],
+  "license": "Smartlogic",
+  "homepage": "http://www.smartlogic.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
