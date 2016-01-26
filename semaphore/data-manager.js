@@ -1,14 +1,12 @@
-/* global angular, _ */
-(function(angular, _) {
+/* global angular, _, d3*/
+(function(angular, _, d3) {
   'use strict';
   angular.module('visualizer.server').service('visualizer.semaphore.data',
     ortDataManagerService);
 
   ortDataManagerService.$inject = ['visualizer.functions.functions',
-   'visualizer.dev.console',
-   'visualizer.externals.d3','jsonLdValueService'];
-  function ortDataManagerService(ortFunctionsService, ortConsole,
-    d3, ld) {
+   'visualizer.dev.console'];
+  function ortDataManagerService(ortFunctionsService, ortConsole) {
     return {
 
       /**
@@ -17,9 +15,10 @@
        * @param {object} inputData
        * @returns {parsed|*}
        */
-      parse: function(inputData, structure) {
+      parse: function(inputData, structure, nameFetcherFn) {
+        this.nameFetcher = nameFetcherFn;
         var parsed = {
-          name: ld.valueOf.metaDisplayName(inputData),
+          name: this.nameFetcher(inputData),
           href: '',
           id: inputData['@id'],
           isRoot: true,
@@ -68,7 +67,7 @@
             index = index + 1;
             if (rootData[item['@id']] && rootData[item['@id']].length > 0) {
               ctx.addSpecialChildren(parent, rootData[item['@id']],
-                ld.valueOf.metaDisplayName(item), color(index));
+                this.nameFetcher(item), color(index));
             }
           });
         }
@@ -95,7 +94,7 @@
             var children = [];
             _.each(topConcept, function(child) {
               children.push({
-                name: ld.valueOf.metaDisplayName(child),
+                name: this.nameFetcher(child),
                 depth: 2,
                 color: relationColor,
                 id: child['@id'],
@@ -129,7 +128,7 @@
             var children = [];
             _.each(narrowerChildren, function(child) {
               children.push({
-                name: ld.valueOf.metaDisplayName(child),
+                name: this.nameFetcher(child),
                 depth: 2,
                 color: relationColor,
                 id: child['@id'],
@@ -164,7 +163,7 @@
              var children = [];
              _.each(relatedChildren, function(child) {
                children.push({
-                 name: ld.valueOf.metaDisplayName(child),
+                 name: this.nameFetcher(child),
                  depth: 2,
                  color: relationColor,
                  id: child['@id'],
@@ -199,7 +198,7 @@
             var children = [];
             _.each(broaderChildren, function(child) {
               children.push({
-                name: ld.valueOf.metaDisplayName(child),
+                name: this.nameFetcher(child),
                 depth: 2,
                 color: relationColor,
                 id: child['@id'],
@@ -235,7 +234,7 @@
             var children = [];
             _.each(specialChildren, function(child) {
               children.push({
-                name: ld.valueOf.metaDisplayName(child),
+                name: this.nameFetcher(child),
                 depth: 2,
                 color: relationColor,
                 id: child['@id'],
@@ -252,4 +251,4 @@
     };
   }
 
-})(angular, _);
+})(angular, _, d3);
