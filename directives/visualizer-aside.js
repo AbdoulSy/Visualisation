@@ -16,7 +16,8 @@
       },
       link: function($scope) {
         $scope.openCommentsSection =  function() {
-          $rootScope.$emit('willOpenCommentsSection');
+          //FIXME: make the name of the event configurable
+          $rootScope.$emit('wom.visualizer.will-open-comments-section');
         };
         $scope.openMailTo = function() {
           $window.location = 'mailto:?subject=' + 'Model review: ' +
