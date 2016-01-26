@@ -20,7 +20,7 @@
         a.on('click', _.debounce(function(f) {
 
           if (f.isRelation || f.isRoot) {
-            d3.event.stopPropagation();
+              return false;
           } else {
             //nodeService.navigateTo(f, scope); for use in genentech
             //TODO create navigation service configurable in adapters
@@ -29,11 +29,8 @@
             layoutHelpers.collapse(this, function() {
                nodeService.changeStateTo(f);
              });
-
           }
-
         }));
-
       }
     };
   }
