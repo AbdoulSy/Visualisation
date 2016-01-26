@@ -7,22 +7,22 @@ In this File, Will be described how to install and use the files in this applica
 
 ###Directory Structure
 
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 config/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 dev/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 directives/
--rw-rw-r--  1 abdouls abdouls 2398 Jan 25 06:32 directory-structure.txt
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 errors/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 externals/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 functions/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 _future/
-drwxrwxr-x  3 abdouls abdouls 4096 Jan 25 06:32 graph/
--rw-rw-r--  1 abdouls abdouls   23 Jan 25 06:32 .jscsrc
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 language/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 modules/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 semaphore/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 ses/
-drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 templates/
--rw-rw-r--  1 abdouls abdouls  434 Jan 25 06:32 visualizer-module.js
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 config/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 dev/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 directives/
+    -rw-rw-r--  1 abdouls abdouls 2398 Jan 25 06:32 directory-structure.txt
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 errors/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 externals/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 functions/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 _future/
+    drwxrwxr-x  3 abdouls abdouls 4096 Jan 25 06:32 graph/
+    -rw-rw-r--  1 abdouls abdouls   23 Jan 25 06:32 .jscsrc
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 language/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 modules/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 semaphore/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 ses/
+    drwxrwxr-x  2 abdouls abdouls 4096 Jan 25 06:32 templates/
+    -rw-rw-r--  1 abdouls abdouls  434 Jan 25 06:32 visualizer-module.js
 
 
 #####Config
