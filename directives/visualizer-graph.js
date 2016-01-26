@@ -8,7 +8,7 @@
   function graphDirective(Templating) {
     return {
       restrict: 'E',
-      templateUrl: 'components/visualizer/templates/visualizer-graph.html',
+      templateUrl: 'bower_components/smartlogic-visualizer/templates/visualizer-graph.html',
       scope: {
         data: '=chartData'
       },

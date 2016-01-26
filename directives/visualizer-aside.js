@@ -9,7 +9,7 @@
     return {
       restrict: 'E',
       templateUrl:
-        'components/visualizer/templates/visualizer-aside-panel.html',
+        'bower_components/smartlogic-visualisation/templates/visualizer-aside-panel.html',
       scope: {
         content: '=content',
         manager: '=contentManager'
