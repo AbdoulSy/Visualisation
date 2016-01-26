@@ -1,15 +1,14 @@
-/* global angular */
-(function(angular) {
+/* global angular, d3 */
+(function() {
   'use strict';
   angular.module('visualizer.graph').service('visualizer.graph.layout',
     graphLayoutService);
 
-  graphLayoutService.$inject = ['visualizer.externals.d3',
-    'visualizer.config.settings',
+  graphLayoutService.$inject = ['visualizer.config.settings',
     'visualizer.graph.layoutHelpers','visualizer.graph.svg.node',
     'visualizer.graph.utils','visualizer.graph.paginator',
     'visualizer.graph.text'];
-  function graphLayoutService(d3, ortGraphSettings,
+  function graphLayoutService(ortGraphSettings,
     ortHelpers, nodeService, graphUtils, PaginatorManager, TextManager) {
 
     return {
@@ -121,4 +120,4 @@
     };
   }
 
-})(angular);
+})();

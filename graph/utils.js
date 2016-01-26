@@ -1,11 +1,11 @@
-/* global angular */
-(function(angular) {
+/* global angular, d3 */
+(function() {
   'use strict';
   angular.module('visualizer.graph').service('visualizer.graph.utils',
     ortGraphUtilService);
 
-  ortGraphUtilService.$inject = ['visualizer.externals.d3'];
-  function ortGraphUtilService(d3) {
+  ortGraphUtilService.$inject = [];
+  function ortGraphUtilService() {
 
     return {
       lastNode: null,
@@ -286,4 +286,4 @@
       }
     };
   }
-})(angular);
+})();

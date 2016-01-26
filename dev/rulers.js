@@ -1,14 +1,14 @@
-/* global angular */
+/* global angular, d3 */
 (function() {
   'use strict';
 
   angular.module('visualizer.dev').service('visualizer.dev.rulers',
     rulersService);
 
-  rulersService.$inject = ['$window', 'visualizer.externals.d3',
+  rulersService.$inject = ['$window',
    'visualizer.config.settings'];
 
-  function rulersService($window, d3, ortGraphSettings) {
+  function rulersService($window, ortGraphSettings) {
     return {
       render: function(svgContainer, width, height) {
         var midWidth = width / 2;

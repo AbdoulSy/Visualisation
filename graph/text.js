@@ -1,11 +1,11 @@
-/* global angular */
-(function(angular) {
+/* global angular, textFit */
+(function() {
   'use strict';
   angular.module('visualizer.graph').service('visualizer.graph.text',
    graphTextService);
 
   graphTextService.$inject = ['visualizer.graph.utils',
-  'visualizer.config.settings', 'visualizer.externals.textFit'];
+  'visualizer.config.settings'];
   //todo implement when the backend is implemented
   function graphTextService(graphUtils, ortGraphSettings, textFit) {
 
@@ -107,4 +107,4 @@
       }
     };
   }
-})(angular);
+})();

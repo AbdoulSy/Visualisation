@@ -1,12 +1,12 @@
-/* global angular */
+/* global angular, d3 */
 (function() {
   'use strict';
   angular.module('visualizer.graph.svg').directive('slGraphSvgG',
     ortGDirective);
 
-  ortGDirective.$inject = ['visualizer.externals.d3',
-  'visualizer.graph.svg.node', 'visualizer.graph.layoutHelpers'];
-  function ortGDirective(d3, nodeService, layoutHelpers) {
+  ortGDirective.$inject = ['visualizer.graph.svg.node',
+    'visualizer.graph.layoutHelpers'];
+  function ortGDirective(nodeService, layoutHelpers) {
     return {
       restrict: 'CA',
       templateNamespace: 'svg',

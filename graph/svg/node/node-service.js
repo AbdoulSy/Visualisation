@@ -1,13 +1,12 @@
-/* global angular, $ */
+/* global angular, $, URI */
 (function(angular) {
   'use strict';
   angular.module('visualizer.graph.svg').service('visualizer.graph.svg.node',
     ortNodeService);
 
   ortNodeService.$inject = ['$window','visualizer.dev.console', '$state',
-   'visualizer.externals.URI', 'visualizer.graph.utils'];
-  //todo implement when the backend is implemented
-  function ortNodeService($window, ortConsole, $state, URI, Utils) {
+    'visualizer.graph.utils'];
+  function ortNodeService($window, ortConsole, $state, Utils) {
 
     return {
       mode: 'foreignObject',

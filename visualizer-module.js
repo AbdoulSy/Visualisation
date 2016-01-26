@@ -8,7 +8,7 @@
     'visualizer.dev',
     'visualizer.directives',
     'visualizer.errors',
-    'visualizer.externals',
+    //'visualizer.externals',
     'visualizer.functions',
     //'visualizer._future',
     'visualizer.graph',

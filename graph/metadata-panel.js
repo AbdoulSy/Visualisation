@@ -1,11 +1,11 @@
-/* global angular */
+/* global angular, d3 */
 (function() {
   'use strict';
   angular.module('visualizer.graph').service('visualizer.graph.metadataPanel',
     metadataPanel);
-  metadataPanel.$inject = ['visualizer.externals.d3'];
+  metadataPanel.$inject = [];
   //jscs:disable requireDotNotation
-  function metadataPanel(d3) {
+  function metadataPanel() {
     return {
        fill: function(data) {
          var viewData = [];

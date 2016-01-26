@@ -1,14 +1,14 @@
-/* global angular */
-(function(angular) {
+/* global angular, d3 */
+(function() {
   'use strict';
   angular.module('visualizer.graph').service('visualizer.graph.paginator',
     nodePaginatorService);
 
-  nodePaginatorService.$inject = ['visualizer.externals.d3',
+  nodePaginatorService.$inject = [
     'visualizer.config.settings', 'visualizer.graph.paginatorHelpers',
     'visualizer.graph.text', 'visualizer.graph.utils'];
   //todo implement when the backend is implemented
-  function nodePaginatorService(d3, ortGraphSettings, Helpers, Text, Utils) {
+  function nodePaginatorService(ortGraphSettings, Helpers, Text, Utils) {
 
     return {
       settings: _.extend({
@@ -188,4 +188,4 @@
     };
   }
 
-})(angular);
+})();

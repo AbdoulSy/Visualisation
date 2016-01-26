@@ -1,16 +1,15 @@
-/* global angular */
-(function(angular) {
+/* global angular, d3, textFit  */
+(function() {
   'use strict';
   angular.module('visualizer.graph')
     .service('visualizer.graph.layoutHelpers', graphLayoutHelpers);
 
-  graphLayoutHelpers.$inject = ['$compile','visualizer.externals.textFit',
-    'visualizer.externals.d3',
+  graphLayoutHelpers.$inject = ['$compile',
     'visualizer.config.settings', 'visualizer.graph.utils',
     'visualizer.dev.rulers', 'visualizer.functions.functions',
     'visualizer.graph.paginator'];
   //todo implement when the backend is implemented
-  function graphLayoutHelpers($compile, textFit, d3,
+  function graphLayoutHelpers($compile,
     ortGraphSettings, graphUtils, rulers, Functions)  {
 
     return {
@@ -226,4 +225,4 @@
 
   }
 
-})(angular);
+})();
