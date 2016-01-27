@@ -67,7 +67,7 @@
             index = index + 1;
             if (rootData[item['@id']] && rootData[item['@id']].length > 0) {
               ctx.addSpecialChildren(parent, rootData[item['@id']],
-                this.nameFetcher(item), color(index));
+                ctx.nameFetcher(item), color(index));
             }
           });
         }
@@ -81,6 +81,7 @@
        * @param {string} relationColor
        */
       addTopConceptAsChildren: function(parent, topConcept, relationColor) {
+        var ctx = this;
         parent.children.push({
           name: 'Top Concepts',
           parent: parent.id,
@@ -94,7 +95,7 @@
             var children = [];
             _.each(topConcept, function(child) {
               children.push({
-                name: this.nameFetcher(child),
+                name: ctx.nameFetcher(child),
                 depth: 2,
                 color: relationColor,
                 id: child['@id'],
@@ -116,6 +117,7 @@
        * @param {strign} relationColor
        */
       addNarrowerChildren: function(parent, narrowerChildren, relationColor) {
+        var ctx = this;
         parent.children.push({
           name: 'Narrower',
           parent: parent.id,
@@ -128,7 +130,7 @@
             var children = [];
             _.each(narrowerChildren, function(child) {
               children.push({
-                name: this.nameFetcher(child),
+                name: ctx.nameFetcher(child),
                 depth: 2,
                 color: relationColor,
                 id: child['@id'],
@@ -151,6 +153,7 @@
        * @param {string} relationColor
        */
       addRelatedChildren: function(parent, relatedChildren, relationColor) {
+        var ctx = this;
         parent.children.push({
            name: 'related',
            parent: parent.id,
@@ -163,7 +166,7 @@
              var children = [];
              _.each(relatedChildren, function(child) {
                children.push({
-                 name: this.nameFetcher(child),
+                 name: ctx.nameFetcher(child),
                  depth: 2,
                  color: relationColor,
                  id: child['@id'],
@@ -186,6 +189,7 @@
        * @param {string} relationColor
        */
       addBroaderChildren: function(parent, broaderChildren, relationColor) {
+        var ctx = this;
         parent.children.push({
           name: 'Broader',
           parent: parent.id,
@@ -198,7 +202,7 @@
             var children = [];
             _.each(broaderChildren, function(child) {
               children.push({
-                name: this.nameFetcher(child),
+                name: ctx.nameFetcher(child),
                 depth: 2,
                 color: relationColor,
                 id: child['@id'],
@@ -223,6 +227,7 @@
        */
       addSpecialChildren: function(parent, specialChildren,
                               name, relationColor) {
+        var ctx = this;
         parent.children.push({
           name: name,
           parent: parent.id,
@@ -234,7 +239,7 @@
             var children = [];
             _.each(specialChildren, function(child) {
               children.push({
-                name: this.nameFetcher(child),
+                name: ctx.nameFetcher(child),
                 depth: 2,
                 color: relationColor,
                 id: child['@id'],
