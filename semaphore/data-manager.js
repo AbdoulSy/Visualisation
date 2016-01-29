@@ -25,7 +25,7 @@
           depth: 1,
           x: 0,
           y: 0,
-          children: []
+          children: (inputData.children || [])
         };
         ortConsole.lc(inputData, {color: 'cyan'});
         this.addChildren(parsed, inputData, structure);
