@@ -1,7 +1,7 @@
 /* global angular */
 (function() {
   'use strict';
-
+  /** @module visualizer */
   angular.module('visualizer', [
     'visualizer.config',
     //'visualizer.data',

@@ -1,15 +1,29 @@
 /* global angular, d3 */
+/**
+ * @file 
+ * Shows Rulers on the visualizer as a means of visually debugging
+ */
 (function() {
   'use strict';
 
+  /** @namespace visualizer.dev **/
   angular.module('visualizer.dev').service('visualizer.dev.rulers',
     rulersService);
-
+  /** @external $window **/
+  /** @external visualizer.config:settings **/
   rulersService.$inject = ['$window',
    'visualizer.config.settings'];
-
+  /** @class visualizer.dev:rulers */
   function rulersService($window, ortGraphSettings) {
     return {
+      /** @memberof visualizer.dev:rulers
+       *  @param {DOMElement} svgContainer
+       *  @param {number} width
+       *  @param {number} height
+       *  @description renders the rulers for the entire graph
+       *  Beneficial for seeing the graph virtual boundaries
+       *  Only if settings.devMode are true
+       */
       render: function(svgContainer, width, height) {
         var midWidth = width / 2;
         var midHeight = height / 2;
@@ -41,6 +55,12 @@
            .attr('cy', midHeight);
         }
       },
+      /** @memberof visualizer.dev:rulers
+       *  @param {d3.selection} node the node
+       *  @description renders a blue rectangle around every virtual node
+       *  beneficial to see the nodes boundaries
+       *  Only if settings.devMode are true
+       */
       renderForNode: function(node) {
         if (ortGraphSettings.devMode) {
           node.append('rect')
@@ -57,6 +77,11 @@
           .attr('width', (ortGraphSettings.circle.radius * 2));
         }
       },
+      /**
+       * @memberof visualizer.dev:rulers
+       * @param {*} arguments... anything to be logged
+       * @description Logs only if on dev mode
+       */
       log: function() {
         if (ortGraphSettings.devMode) {
           $window.console.log(arguments.slice.call());

@@ -1,17 +1,20 @@
 /* global angular, _, d3*/
 (function(angular, _, d3) {
   'use strict';
+  /** @namespace visualizer.server */
   angular.module('visualizer.server').service('visualizer.semaphore.data',
     ortDataManagerService);
-
+  /** @external visualizer.functions:functions **/
+  /** @external visualizer.dev:console **/
   ortDataManagerService.$inject = ['visualizer.functions.functions',
    'visualizer.dev.console'];
+  /** @class visualizer.semaphore:data **/
   function ortDataManagerService(ortFunctionsService, ortConsole) {
     return {
 
       /**
-       * creates a d3 ready set of nodes and links
-       *
+       * @description creates a d3 ready set of nodes and links
+       * @memberof visualizer.semaphore:data
        * @param {object} inputData
        * @returns {parsed|*}
        */
@@ -32,8 +35,8 @@
         return parsed;
       },
       /**
-       * Adds children to the current concept viewed
-       *
+       * @description Adds children to the current concept viewed
+       * @memberof visualizer.semaphore:data
        * @param {object} parent
        * @param {object} rootData
        * @param {object} structure
@@ -74,8 +77,8 @@
       },
 
       /**
-       * Adds topConcept nodes and links to a concept parent
-       *
+       * @description Adds topConcept nodes and links to a concept parent
+       * @memberof visualizer.semaphore:data
        * @param {object} parent
        * @param {object} topConcept
        * @param {string} relationColor
@@ -109,9 +112,10 @@
       },
 
       /**
-       * Adds nodes and links to a node
+       * @description Adds nodes and links to a node
        * that has a skos:related array of children
        *
+       * @memberof visualizer.semaphore:data
        * @param {object} parent
        * @param {object} narrowerChildren
        * @param {strign} relationColor
@@ -145,9 +149,10 @@
       },
 
       /**
-       * Adds nodes and links to a node
+       * @description Adds nodes and links to a node
        * that has a skos:related array of children
        *
+       * @memberof visualizer.semaphore:data
        * @param {object} parent
        * @param {object} relatedChildren
        * @param {string} relationColor
@@ -181,9 +186,9 @@
       },
 
       /**
-       * Adds nodes and links to a node
+       * @description Adds nodes and links to a node
        * that has a skos:related array of children
-       *
+       * @memberof visualizer.semaphore.data
        * @param {object} parent
        * @param {object} broaderChildren
        * @param {string} relationColor
@@ -217,9 +222,10 @@
       },
 
       /**
-       * Adds nodes and links to a node
+       * @description Adds nodes and links to a node
        * that has a special array of children
        *
+       * @memberof visualizer.semaphore:data
        * @param {object} parent
        * @param {object} specialChildren
        * @param {string} name

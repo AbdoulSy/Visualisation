@@ -1,6 +1,10 @@
+/* @global angular */
 (function(angular) {
   'use strict';
-  angular.module('visualizer.config').value('visualizer.config.settings', {
+  /** @namespace visualizer.config */
+  angular.module('visualizer.config').value('visualizer.config.settings',
+    /** @var {object} visualizer.config:settings */
+    {
     devMode: false,
     //diameter: 590,
     diameter: 'dynamic',
