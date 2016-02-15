@@ -28,6 +28,7 @@
       createFittingText: function(node) {
         var elemContainer = node.append('text')
           .attr('width', (ortGraphSettings.circle.diameter))
+          .attr('transform', graphUtils.getTextPlacementFn2())
           .attr('height', (ortGraphSettings.circle.diameter))
           .append('textPath')
             .attr('xlink:href', '#textGuide')
@@ -42,8 +43,6 @@
               }
             });
         elemContainer.attr('ort-text', '');
-        elemContainer.attr('transform', graphUtils.getTextPlacementFn2());
-
         return elemContainer;
       },
 
