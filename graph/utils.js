@@ -273,11 +273,11 @@
           if (!d.isSlanted) {
             return d.x < 180 ?
               'rotate(' + (-1 * d.x - 270) + ')translate(-40,-40)' :
-              'rotate(' + (-1 * d.x - 270) + ')translate(-40,-40)';
+              'rotate(' + (-1 * d.x - 270) + ')translate(-40,-30)';
           } else {
             return d.x < 180 ?
               'rotate(' + (-1 * d.x - 315) + ')translate(-40,-40)' :
-              'rotate(' + (-1 * d.x - 315) + ')translate(-40,-40)';
+              'rotate(' + (-1 * d.x - 315) + ')translate(-40,-30)';
           }
         };
       },

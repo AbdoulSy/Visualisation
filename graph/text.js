@@ -26,12 +26,54 @@
 
       //creates text as SVG text fitting
       createFittingText: function(node) {
+          function calculateTextShape (txt) {
+            if (txt.length === 0) {
+              return {
+                wordCount: 0,
+                totalChars: 0,
+                charCount: 0,
+                charCountNoSpace: 0
+              };
+            }
+            return getTextShape(txt);
+          }
+
+          function getTextShape (txt) {
+            var rgx = /\s+/gi;
+            var trimmed = txt.trim();
+            return {
+              wordCount: trimmed.replace(rgx, '').split(' ').length,
+              totalChars: txt.length,
+              charCount: trimmed.length,
+              charCountNoSpace: trimmed.replace(rgx, '').length
+            };
+
+          }
+
+         function getTextGuide (textShape) {
+           if (textShape.wordCount < 3 && textShape.charCountNoSpace < 10) {
+             return '#textGuide-oneLn';
+           }
+           if (textShape.wordCount < 3 && textShape.charCountNoSpace > 10 && textShape.charCountNoSpace < 14) {
+             return '#textGuide-oneBigLn';
+           }
+           if (textShape.wordCount < 4 && textShape.charCountNoSpace < 
+             ortGraphSettings.nbOfCharactersForEachBubble) {
+             return '#textGuide-twoLn';
+           }
+           return '#textGuide';
+         }
+
         var elemContainer = node.append('text')
           .attr('width', (ortGraphSettings.circle.diameter))
           .attr('transform', graphUtils.getTextPlacementFn2())
           .attr('height', (ortGraphSettings.circle.diameter))
           .append('textPath')
-            .attr('xlink:href', '#textGuide')
+            .attr('xlink:href', function(d) {
+              var textShape = calculateTextShape(d.name);
+              d.textShape = textShape;
+              return getTextGuide(textShape);
+            }),
             .text(function(d) {
               var returnedText = d.name
                 .substring(0, ortGraphSettings.nbOfCharactersForEachBubble);
