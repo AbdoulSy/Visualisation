@@ -1,20 +1,4 @@
-/* global angular, d3 */
-/**
- * @file 
- * Shows Rulers on the visualizer as a means of visually debugging
- */
-(function() {
-  'use strict';
-
-  /** @namespace visualizer.dev **/
-  angular.module('visualizer.dev').service('visualizer.dev.rulers',
-    rulersService);
-  /** @external $window **/
-  /** @external visualizer.config:settings **/
-  rulersService.$inject = ['$window',
-   'visualizer.config.settings'];
-  /** @class visualizer.dev:rulers */
-  function rulersService($window, ortGraphSettings) {
+  function visualizerDevRulersService($window, ortGraphSettings) {
     return {
       /** @memberof visualizer.dev:rulers
        *  @param {DOMElement} svgContainer
@@ -90,4 +74,9 @@
     };
   }
 
-})();
+ if(typeof exports !== 'undefined') {
+   if(typeof module !== 'undefined' && module.exports) {
+     exports = module.exports = visualizerDevRulersService;
+   }
+   exports.visualizerDevRulersService = visualizerDevRulersService;
+ }

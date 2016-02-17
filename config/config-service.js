@@ -1,12 +1,4 @@
-/* global angular, d3 */
-(function() {
-  'use strict';
-  /** @namespace visualizer.config */
-  angular.module('visualizer.config').service('visualizer.config.config',
-    configurationService);
-  configurationService.$inject = ["visualizer.config.settings"];
-  //jscs:disable requireDotNotation
-  function configurationService(settings) {
+  var visualizerConfigService = function(settings) {
     return {
        settings: settings,
        getAll: function () {
@@ -23,5 +15,11 @@
            return this;
        }
      };
-  }
-})();
+  };
+
+ if(typeof exports !== 'undefined') {
+   if(typeof module !== 'undefined' && module.exports) {
+     exports = module.exports = visualizerConfigService;
+   }
+   exports.visualizerConfigService = visualizerConfigService;
+ }

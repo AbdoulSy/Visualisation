@@ -1,12 +1,6 @@
-(function() {
-  'use strict';
+
   var Errors =  {};
-  angular.module('visualizer.errors').service('visualizer.errors.errors',
-    ortErrorService);
-
-  ortErrorService.$inject = [];
-
-  function ortErrorService() {
+  module.exports = function ortErrorService() {
     return {
       ApplicationError: Errors.ApplicationError,
       DataError: Errors.DataError,
@@ -88,4 +82,4 @@
     this.message = message || 'unknown exception';
   };
   Errors.DOMError.prototype = new Error();
-})();
+

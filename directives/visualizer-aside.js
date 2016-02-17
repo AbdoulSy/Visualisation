@@ -1,11 +1,5 @@
-/* global angular*/
-(function() {
-  'use strict';
-  angular.module('visualizer.directives').directive('visualizerAside',
-    asidePanelDirective);
 
-  asidePanelDirective.$inject = ['$rootScope', '$window'];
-  function asidePanelDirective($rootScope, $window) {
+  module.exports = function($rootScope, $window) {
     return {
       restrict: 'E',
       templateUrl:
@@ -29,5 +23,6 @@
 
       }
     };
-  }
-})();
+  };
+
+

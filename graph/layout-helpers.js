@@ -1,15 +1,4 @@
-/* global angular, d3, textFit  */
-(function() {
-  'use strict';
-  angular.module('visualizer.graph')
-    .service('visualizer.graph.layoutHelpers', graphLayoutHelpers);
-
-  graphLayoutHelpers.$inject = ['$compile',
-    'visualizer.config.settings', 'visualizer.graph.utils',
-    'visualizer.dev.rulers', 'visualizer.functions.functions',
-    'visualizer.graph.paginator'];
-  //todo implement when the backend is implemented
-  function graphLayoutHelpers($compile,
+module.exports = function graphLayoutHelpers($compile,
     ortGraphSettings, graphUtils, rulers, Functions)  {
 
     return {
@@ -224,5 +213,3 @@
     };
 
   }
-
-})();

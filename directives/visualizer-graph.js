@@ -1,11 +1,4 @@
-/* global angular*/
-(function() {
-  'use strict';
-  angular.module('visualizer.directives').directive('visualizerGraph',
-    graphDirective);
-
-  graphDirective.$inject = ['visualizer.graph.templating'];
-  function graphDirective(Templating) {
+  module.exports = function graphDirective(Templating) {
     return {
       restrict: 'E',
       templateUrl: 'bower_components/smartlogic-visualisation/templates/visualizer-graph.html',
@@ -38,4 +31,4 @@
       }
     };
   }
-})();
+

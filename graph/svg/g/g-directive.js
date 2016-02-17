@@ -11,7 +11,8 @@
       restrict: 'CA',
       templateNamespace: 'svg',
       scope: {
-        data: '=chartData'
+        data: '=chartData',
+        clickEvent: '&click-event'
       },
       link: function(scope, iElement, iAttrs) {
         scope.currentWidth = iAttrs.width;

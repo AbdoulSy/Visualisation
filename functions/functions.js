@@ -1,11 +1,4 @@
-/* global angular, _ */
-(function() {
-  'use strict';
-  angular.module('visualizer.functions').service(
-    'visualizer.functions.functions', ortFunctionsService);
-
-  ortFunctionsService.$inject = [];
-  function ortFunctionsService() {
+  module.exports = function ortFunctionsService() {
     return {
       parseRoot: function(data) {
         var root = {};
@@ -330,6 +323,4 @@
       }
     };
   }
-
-})();
 

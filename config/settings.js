@@ -1,10 +1,4 @@
-/* @global angular */
-(function(angular) {
-  'use strict';
-  /** @namespace visualizer.config */
-  angular.module('visualizer.config').value('visualizer.config.settings',
-    /** @var {object} visualizer.config:settings */
-    {
+    var visualiserConfigSettings = {
     devMode: false,
     //diameter: 590,
     diameter: 'dynamic',
@@ -62,7 +56,12 @@
        fullUrl: 'http://stiletto.smartlogic.com/ses/nasapoc'
      }
     }
-  });
+  };
 
-})(angular);
 
+ if(typeof exports !== 'undefined') {
+   if(typeof module !== 'undefined' && module.exports) {
+     exports = module.exports = visualizerConfigSettings;
+   }
+   exports.visualizerConfigSettings = visualizerConfigSettings;
+ }
