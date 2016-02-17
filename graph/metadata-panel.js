@@ -1,11 +1,4 @@
-/* global angular, d3 */
-(function() {
-  'use strict';
-  angular.module('visualizer.graph').service('visualizer.graph.metadataPanel',
-    metadataPanel);
-  metadataPanel.$inject = [];
-  //jscs:disable requireDotNotation
-  function metadataPanel() {
+module.exports = function metadataPanel() {
     return {
        fill: function(data) {
          var viewData = [];
@@ -78,5 +71,4 @@
           });
        }
      };
-  }
-})();
+  };

@@ -1,12 +1,4 @@
-/* global angular */
-(function(angular) {
-  'use strict';
-  angular.module('visualizer.graph')
-    .service('visualizer.graph.paginatorHelpers', nodePaginatorHelpersService);
-
-  nodePaginatorHelpersService.$inject = ['visualizer.config.settings'];
-  //todo implement when the backend is implemented
-  function nodePaginatorHelpersService(ortGraphSettings) {
+module.exports = function nodePaginatorHelpersService(ortGraphSettings) {
 
     return {
       conf: _.extend({
@@ -163,6 +155,4 @@
         return root;
       }
     };
-  }
-
-})(angular);
+  };

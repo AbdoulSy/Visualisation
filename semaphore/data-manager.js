@@ -1,15 +1,4 @@
-/* global angular, _, d3*/
-(function(angular, _, d3) {
-  'use strict';
-  /** @namespace visualizer.server */
-  angular.module('visualizer.server').service('visualizer.semaphore.data',
-    ortDataManagerService);
-  /** @external visualizer.functions:functions **/
-  /** @external visualizer.dev:console **/
-  ortDataManagerService.$inject = ['visualizer.functions.functions',
-   'visualizer.dev.console'];
-  /** @class visualizer.semaphore:data **/
-  function ortDataManagerService(ortFunctionsService, ortConsole) {
+module.exports = function ortDataManagerService(ortFunctionsService, ortConsole) {
     return {
 
       /**
@@ -260,6 +249,4 @@
       }
 
     };
-  }
-
-})(angular, _, d3);
+  };

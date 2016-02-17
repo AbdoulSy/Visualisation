@@ -1,12 +1,4 @@
-/* global angular, $, URI */
-(function(angular) {
-  'use strict';
-  angular.module('visualizer.graph.svg').service('visualizer.graph.svg.node',
-    ortNodeService);
-
-  ortNodeService.$inject = ['$window','visualizer.dev.console', '$state',
-    'visualizer.graph.utils'];
-  function ortNodeService($window, ortConsole, $state, Utils) {
+module.exports = function ortNodeService($window, ortConsole, $state, Utils) {
 
     return {
       mode: 'foreignObject',
@@ -115,7 +107,5 @@
         return this.mode;
       }
     };
-  }
-
-})(angular);
+  };
 

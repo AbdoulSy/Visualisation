@@ -1,11 +1,4 @@
-/* global angular, URI $*/
-(function() {
-  'use strict';
-  angular.module('visualizer.server').service('visualizer.ses.data',
-    ortGraphDataService);
-
-  ortGraphDataService.$inject = ['$window', 'visualizer.config.settings'];
-  function ortGraphDataService($window, ortSettings) {
+module.exports = function ortGraphDataService($window, ortSettings) {
 
     return {
       init: function(data, query, callback) {
@@ -80,7 +73,5 @@
         };
       }
     };
-  }
-
-})();
+  };
 

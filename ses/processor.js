@@ -1,12 +1,4 @@
-/* global angular, d3 */
-(function() {
-  'use strict';
-  angular.module('visualizer.server').service('visualizer.ses.processor',
-    lsDataProcessor);
-
-  lsDataProcessor.$inject = [];
-  //todo implement when the backend is implemented
-  function lsDataProcessor() {
+module.exports = function lsDataProcessor() {
 
     return {
       processData: function(data) {
@@ -41,7 +33,6 @@
       }
 
     };
-  }
+  };
 
-})();
 

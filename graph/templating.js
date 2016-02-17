@@ -1,13 +1,4 @@
-/* global angular */
-(function() {
-  'use strict';
-  angular.module('visualizer.graph').service('visualizer.graph.templating',
-   ortGraphTemplatingService);
-
-  ortGraphTemplatingService.$inject = ['visualizer.config.settings',
-    'visualizer.graph.vis', '$window'];
-  //todo implement when the backend is implemented
-  function ortGraphTemplatingService(ortSettings, vis, $window) {
+module.exports = function ortGraphTemplatingService(ortSettings, vis, $window) {
 
     return {
       //the list of elements
@@ -54,5 +45,4 @@
         this.processedData = processedData;
       }
     };
-  }
-})();
+  };

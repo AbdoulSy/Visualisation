@@ -1,11 +1,4 @@
-/* global angular */
-(function() {
-  'use strict';
-  angular.module('visualizer.graph.svg').directive('slGraphSvgRect',
-    ortRectDirective);
-
-  ortRectDirective.$inject = [];
-  function ortRectDirective() {
+module.exports = function ortRectDirective() {
     return {
       restrict: 'CA',
       templateNamespace: 'svg',
@@ -18,4 +11,4 @@
       }
     };
   }
-})();
+

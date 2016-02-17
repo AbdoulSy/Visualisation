@@ -1,11 +1,4 @@
-/* global angular */
-(function() {
-  'use strict';
-  angular.module('visualizer.graph.svg').directive('slGraphSvgSvg',
-    ortSvgDirective);
-
-  ortSvgDirective.$inject = ['visualizer.graph.svg.node'];
-  function ortSvgDirective(nodeService) {
+module.exports = function ortSvgDirective(nodeService) {
     return {
       restrict: 'A',
       templateNamespace: 'svg',
@@ -19,5 +12,5 @@
         nodeService.launchFeatureDetection();
       }
     };
-  }
-})();
+  };
+

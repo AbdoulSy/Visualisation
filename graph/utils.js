@@ -1,11 +1,4 @@
-/* global angular, d3 */
-(function() {
-  'use strict';
-  angular.module('visualizer.graph').service('visualizer.graph.utils',
-    ortGraphUtilService);
-
-  ortGraphUtilService.$inject = [];
-  function ortGraphUtilService() {
+module.exports = function ortGraphUtilService() {
 
     return {
       lastNode: null,
@@ -285,5 +278,4 @@
         return function(d) { return d.x < 180 ? 'middle' : 'middle'; };
       }
     };
-  }
-})();
+  };

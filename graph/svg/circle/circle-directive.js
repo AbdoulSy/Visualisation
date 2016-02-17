@@ -1,11 +1,4 @@
-/* global angular */
-(function() {
-  'use strict';
-  angular.module('visualizer.graph.svg').directive('slSvgCircle',
-    ortCircleDirective);
-
-  ortCircleDirective.$inject = [];
-  function ortCircleDirective() {
+module.exports = function ortCircleDirective() {
     return {
       restrict: 'CA',
       templateNamespace: 'svg',
@@ -22,4 +15,4 @@
       }
     };
   }
-})();
+

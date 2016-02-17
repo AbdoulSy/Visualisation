@@ -1,15 +1,4 @@
-/* global angular, d3 */
-(function() {
-  'use strict';
-
-  angular.module('visualizer.graph').service('visualizer.graph.vis',
-    visService);
-
-  visService.$inject = ['$compile',
-    'visualizer.config.settings', 'visualizer.dev.rulers',
-    'visualizer.graph.layout', '$timeout'];
-
-  function visService($compile,
+module.exports = function visService($compile,
   ortSettings, rulerComponent, treeLayout, $timeout) {
     return {
       ref: null,
@@ -92,6 +81,4 @@
         }));
       }
     };
-  }
-
-})();
+  };

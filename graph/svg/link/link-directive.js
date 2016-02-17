@@ -1,11 +1,4 @@
-/* global angular */
-(function() {
-  'use strict';
-  angular.module('visualizer.graph.svg').directive('slSvgLink',
-    ortLinkDirective);
-
-  ortLinkDirective.$inject = [];
-  function ortLinkDirective() {
+module.exports = function ortLinkDirective() {
     return {
       restrict: 'CA',
       templateNamespace: 'svg',
@@ -15,5 +8,5 @@
         scope.target = iAttrs.target;
       }
     };
-  }
-})();
+};
+
