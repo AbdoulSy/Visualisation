@@ -1,6 +1,6 @@
 {
   "name": "smartlogic-visualisation",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "description": "The Ontology Visualizer Component for Semaphore",
   "main": "visualizer-module.js",
   "browser": "visualizer.js",
