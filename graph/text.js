@@ -73,7 +73,7 @@
               var textShape = calculateTextShape(d.name);
               d.textShape = textShape;
               return getTextGuide(textShape);
-            }),
+            })
             .text(function(d) {
               var returnedText = d.name
                 .substring(0, ortGraphSettings.nbOfCharactersForEachBubble);
