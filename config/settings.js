@@ -1,4 +1,4 @@
-    var visualiserConfigSettings = {
+    var visualizerConfigSettings = {
     devMode: false,
     //diameter: 590,
     diameter: 'dynamic',
@@ -58,10 +58,5 @@
     }
   };
 
+  module.exports = visualizerConfigSettings;
 
- if(typeof exports !== 'undefined') {
-   if(typeof module !== 'undefined' && module.exports) {
-     exports = module.exports = visualizerConfigSettings;
-   }
-   exports.visualizerConfigSettings = visualizerConfigSettings;
- }

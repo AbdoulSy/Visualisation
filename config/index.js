@@ -1,7 +1,14 @@
-  var settingsValue = require('config/settings');
-  var configService = require('config/config-service');
-
-  var visualizerConfigModule = angular.module('visualizer.config', []);
+  var settingsValue = require('./settings');
+  var configService = require('./config-service');
+  var visualizerConfigModule = {
+      values: {},
+      services: {},
+      value: function (name, fn) {
+        this.values[name] = fn;
+     }, service: function (name, fn) {
+        this.services[name] = fn;
+     }
+  };
 
   visualizerConfigModule.value('visualizer.config.settings', settingsValue);
 

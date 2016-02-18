@@ -1,10 +1,14 @@
 'use strict';
 
-  var consoleSrv = require('dev/console');
-  var rulersSrv = require('dev/rulers');
+  var consoleSrv = require('./console');
+  var rulersSrv = require('./rulers');
 
-  var visualizerDevModule = angular.module('visualizer.dev', []);
-
+  var visualizerDevModule = {
+      services: {},
+      service: function (name, fn) {
+        this.services[name] = fn;
+     }
+  };
   visualizerDevModule.service('visualizer.dev.console', consoleSrv);
   visualizerDevModule.service('visualizer.dev.rulers', rulersSrv);
 
