@@ -79,7 +79,8 @@
                 if (el === 'children') {
                   _.each(item, function(innerItem) {
 
-                    if (innerItem && d.data && innerItem.abbr === d.data.abbr) {
+                    if (innerItem.relationColor === d.colorId && innerItem &&
+                        d.data && innerItem.abbr === d.data.abbr) {
                       innerItem.page = d.page;
                       innerItem.willPaginate  = d.willPaginate;
                       innerItem.willPaginatePrev  = d.willPaginatePrev;

@@ -51,6 +51,9 @@
 
         var paginatorPager = paginator.append('g')
           .attr('class','paginatorPager')
+          .attr('id', function(d){
+            return 'paginator_' + d.relationColor;
+          })
           .on('click', function() {
             var parentNode = d3.select(this.parentNode);
             var lister = parentNode.select('.paginatorPageLister');
@@ -100,7 +103,7 @@
                     u = '';
                   }
                   res = res +
-                   '<li class=\'paginatorPage ' + u + '\'>' + j + '</li>';
+                   '<li id=\'paginatorPage_' + d.relationColor + '\' class=\'paginatorPage ' + u + '\'>' + j + '</li>';
                 }
                 return res;
               });
@@ -110,6 +113,7 @@
           var data = d3.select(this.parentNode).datum();
           $scope.$emit('paginator.paginate', {
             page: this.textContent,
+            colorId:  data.relationColor,
             data: data
           });
         });
@@ -141,6 +145,7 @@
                 //$window.location.href = uri;
                 $scope.$emit('paginator.paginate', {
                     page: (parseInt(d.page, 10) - 1),
+                    colorId: d.relationColor,
                     willPaginatePrev: true,
                     willPaginateNext: false,
                     willPaginate: true,
@@ -178,6 +183,7 @@
             $scope.$emit('paginator.paginate', {
                 page: (1 + parseInt(d.page, 10)),
                 willPaginatePrev: false,
+                colorId: d.relationColor,
                 willPaginateNext: true,
                 willPaginate: true,
                 data: d
