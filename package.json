@@ -18,8 +18,8 @@
   "scripts": {
     "test": "test-visualizer",
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
-    "jshint": "node_modules/.bin/jshint .",
-    "plato": "node_modules/.bin/plato -r -d reports -x '(node_modules|reports|docs)' ./"
+    "jshint": "node_modules/.bin/jshint ./src",
+    "plato": "node_modules/.bin/plato -r -d reports -x '(node_modules|reports|docs)' ./src"
   },
   "repository": {
     "type": "git",
