@@ -31,6 +31,7 @@
       },
       paginator: {
         circleRadius: 50,
+        active: false,
         maxNbOfChildLeaves: 12,
         minNbOfChildLeaves: 3,
         mode: 'progressive'

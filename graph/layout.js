@@ -75,6 +75,9 @@
         var layout = this.tree;
         var linkShape = this.linkShape;
         $scope.$on('paginator.paginate', function(e, d) {
+          if(ortGraphSettings.graph.paginator.active === false) {
+            return false;
+          }
           _.each(updatedData, function(item, el) {
                 if (el === 'children') {
                   _.each(item, function(innerItem) {
