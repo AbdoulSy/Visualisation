@@ -15,6 +15,40 @@
     return {
 
       centerNode: null,
+      wiggle: function (node) {
+        var gNode = d3.select(node);
+        var currentTransform = d3.transform(gNode.attr('transform'));
+        var translation = currentTransform.translate[0];
+        var spread = 12.5;
+        var step = 1.625;
+        var delay = 30;
+        var currentSpread = 0;
+        var stepNb = 0;
+
+        function nudge(transition) {
+         stepNb++;
+         currentSpread  = currentSpread * -1;
+         if(currentSpread > spread) {
+           transition.attr('transform', 'translate(' + (translation) + ', '+ currentTransform.translate[1]+' )rotate('+currentTransform.rotate+')')
+           return false;
+         }
+         if(stepNb === 0) {
+           currentSpread = currentSpread + step;
+         }
+         if(stepNb %2 == 0) {
+           currentSpread = Math.abs(currentSpread + (step*2));
+         }
+         transition.duration(50)
+          .attr('transform', 'translate(' + (translation + currentSpread) + ', '+ currentTransform.translate[1]+' )rotate('+currentTransform.rotate+')')
+          .each('end', function() {
+            transition.transition()
+            .call(nudge);
+          });
+        }
+
+        gNode.transition()
+        .call(nudge);
+      },
 
       collapse: function(node, callback) {
         var gnode = d3.select(node);

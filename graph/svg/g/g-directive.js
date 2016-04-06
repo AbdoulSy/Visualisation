@@ -24,6 +24,7 @@
           } else {
             //preventing nodes having the same id to be clicked
             if(f.parent && f.parent.parent && f.parent.parent.id === f.id) {
+              layoutHelpers.wiggle(this);
               return false;
             }
             //nodeService.navigateTo(f, scope); for use in genentech
