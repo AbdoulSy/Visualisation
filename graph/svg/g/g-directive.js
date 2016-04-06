@@ -22,6 +22,10 @@
           if (f.isRelation || f.isRoot) {
               return false;
           } else {
+            //preventing nodes having the same id to be clicked
+            if(f.parent && f.parent.parent && f.parent.parent.id === f.id) {
+              return false;
+            }
             //nodeService.navigateTo(f, scope); for use in genentech
             //TODO create navigation service configurable in adapters
             f.willCollapse = true;
