@@ -5,9 +5,12 @@
   "main": "visualizer-module.js",
   "browser": "visualizer.js",
   "browserify": {
-    "transform" :  ["ngify", {
-      "moduleName": "visualizer"
-    }]
+    "transform": [
+      "ngify",
+      {
+        "moduleName": "visualizer"
+      }
+    ]
   },
   "dependencies": {
     "babel-preset-react": "^6.3.13",
@@ -18,12 +21,13 @@
     "react-dom": "^0.14.6"
   },
   "devDependencies": {
+    "ava": "^0.14.0",
     "jsdoc": "^3.4.0",
     "minami": "^1.1.1",
     "plato": "^1.5.0"
   },
   "scripts": {
-    "test": "test-visualizer",
+    "test": "ava",
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
     "jshint": "node_modules/.bin/jshint .",
     "plato": "node_modules/.bin/plato -r -d reports -x '(node_modules|reports|docs)' ./"
